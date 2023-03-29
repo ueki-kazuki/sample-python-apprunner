@@ -8,6 +8,8 @@ build:
 
 run:
   command: pipenv run flask run --host=0.0.0.0
+  network: 
+    port: 5000
   env:
     - name: FLASK_APP
       value: "server"
