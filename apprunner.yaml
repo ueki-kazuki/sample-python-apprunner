@@ -3,9 +3,13 @@ runtime: python3
 build:
   commands:
     build:        
-      - pip install -r requirements.txt
+      - pip install pipenv
+      - pipenv install
+
 run:
   command: python server.py
   env:
-    - name: NAME
-      value: "Kazuki"
+    - name: FLASK_APP
+      value: "server"
+    - name: FLASK_ENV
+      value: "development"

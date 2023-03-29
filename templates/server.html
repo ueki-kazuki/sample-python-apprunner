@@ -1,0 +1,14 @@
+<html lang="ja">
+<head>
+</head>
+<body>
+
+{% if env %}
+	<ul>
+	{% for k,v in env.items() | sort %}
+		<li>{{ k }} = {{ v }}</li>
+	{% endfor %}
+	</ul>
+{% endif %}
+</body>
+</html>

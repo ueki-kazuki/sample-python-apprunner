@@ -1,21 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
-
-PORT = 8080
-name = os.environ['NAME']
-if name == None or len(name) == 0:
-    name = "world"
-MESSAGE = "Hello, " + name + "!"
-print("Message: '" + MESSAGE + "'")
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def root():
-    print("Handling web request. Returning message.")
-    result = MESSAGE.encode("utf-8")
-    return result
+    return render_template('server.html', env=os.environ)
 
 
 if __name__ == "__main__":
