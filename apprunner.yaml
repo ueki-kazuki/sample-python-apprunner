@@ -7,7 +7,7 @@ build:
       - pipenv install
 
 run:
-  command: python server.py
+  command: flask run --host=0.0.0.0
   env:
     - name: FLASK_APP
       value: "server"
