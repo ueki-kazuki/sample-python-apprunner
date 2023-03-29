@@ -2,7 +2,7 @@
 <head>
 </head>
 <body>
-
+<h1>Environment Variables</h1>
 {% if env %}
 	<ul>
 	{% for k,v in env.items() | sort %}
@@ -10,5 +10,14 @@
 	{% endfor %}
 	</ul>
 {% endif %}
+<h1>Request Headers</h1>
+{% if headers %}
+	<ul>
+	{% for k,v in headers.items() | sort %}
+		<li>{{ k }} = {{ v }}</li>
+	{% endfor %}
+	</ul>
+{% endif %}
+</body>
 </body>
 </html>
